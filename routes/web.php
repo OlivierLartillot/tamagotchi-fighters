@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TamagotchiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+Route::get('/tamagotchi-liste', [TamagotchiController::class, 'liste'])->name('tamagotchi-liste');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
