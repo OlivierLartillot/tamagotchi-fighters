@@ -18,6 +18,23 @@
                 <li class="nav-item">
                     <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
                 </li>
+                
+                    <!-- Authentication -->
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </a>
+                       
+                     
+                    </form>
+
+
+
                 @else
                 <li class="nav-item">
                     <a href="{{ route('login') }}" class="nav-link">Log in</a>

@@ -10,12 +10,23 @@
                 <p class="fs-5">
                     Occupe toi  quotidiennement de ton animal. Fais le manger, boire, dormir et n'oublie pas de l'entrainer réguliérement.
                 </p>
-                
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <a href="{{route('login')}}" type="button" class="btn btn-primary btn-lg px-4 gap-3">Se connecter</a>
-                    <a href="{{route('register')}}" type="button" class="btn btn-secondary btn-lg px-4">S'enregistrer</a>
-                </div>    
+
+
         </div>
+
+
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-4">
+            @auth
+
+            <p class="fs-5">
+                Bienvenue {{ ucfirst(auth()->user()->name)}}
+            </p>
+
+            @else
+                <a href="{{route('login')}}" type="button" class="btn btn-primary btn-lg px-4 gap-3">Se connecter</a>
+                <a href="{{route('register')}}" type="button" class="btn btn-secondary btn-lg px-4">S'enregistrer</a>
+            @endauth  
+        </div>  
 
         <div class="text-center mt-2 pt-3 pb-5 bg-light rounded-3">
             <h2 class="pb-2">Les personnages disponibles</h2>
